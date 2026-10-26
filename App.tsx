@@ -1,5 +1,7 @@
 import { StatusBar, StyleSheet, Text, View } from 'react-native';
 import Header from './components/Header';
+import SearchBar from './components/SearchBar';
+import CategoryButton from './components/CategoryButton';
 
 export default function App() {
   return (
@@ -7,6 +9,10 @@ export default function App() {
       <StatusBar barStyle="light-content"/>
       
       <Header></Header>
+
+      <SearchBar></SearchBar>
+
+      <CategoryButton></CategoryButton>
     </View>
   );
 }
