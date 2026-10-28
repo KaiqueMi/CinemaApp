@@ -6,13 +6,29 @@ import CategoryButton from './components/CategoryButton';
 export default function App() {
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="light-content"/>
-      
+      <StatusBar barStyle="light-content" />
+
       <Header></Header>
 
-      <SearchBar></SearchBar>
+      <SearchBar />
 
-      <CategoryButton></CategoryButton>
+      <View style={styles.containerCategory}>
+        <CategoryButton title="Todos" selected={true} />
+        <CategoryButton title="Ação" selected={false} />
+        <CategoryButton title="Animação" selected={false} />
+      </View>
+
+      <View style={styles.sectionMovie}>
+        <View style={styles.sectionTitleRow}>
+          <View style={styles.accentBar}></View>
+          <Text style={styles.sectionTitle}>Filmes em destaque</Text>
+        </View>
+
+        <View style={styles.countBadge}>
+          <Text style={styles.countTitle}>6 filmes</Text>
+        </View>
+      </View>
+
     </View>
   );
 }
@@ -24,5 +40,50 @@ const styles = StyleSheet.create({
     paddingTop: 40,
   },
 
+  containerCategory: {
+    flexDirection: "row",
+    marginLeft: 20
+  },
 
+  sectionMovie: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginHorizontal: 20,
+    marginBlock: 20
+  },
+
+  sectionTitleRow: {
+    flexDirection: "row",
+    gap: 8,
+    alignItems: "center"
+  },
+
+  accentBar: {
+    height: 18,
+    width: 4,
+    backgroundColor: "#FF3366",
+    borderRadius: 2
+  },
+
+  sectionTitle: {
+    fontSize: 20,
+    fontWeight: "800",
+    color: "#FFFFFF",
+    letterSpacing: 0.3
+  },
+
+  countBadge: {
+    backgroundColor: "#161A28",
+    borderWidth: 1,
+    borderColor: "#262d42",
+    borderRadius: 12,
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+  },
+
+  countTitle: {
+    fontSize: 12,
+    fontWeight: "700",
+    color:"#94a4b8",
+  },
 });
