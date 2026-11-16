@@ -2,6 +2,7 @@ import { StatusBar, StyleSheet, Text, View } from 'react-native';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import CategoryButton from './components/CategoryButton';
+import MovieCard from './components/MovieCard';
 
 export default function App() {
   return (
@@ -10,12 +11,11 @@ export default function App() {
 
       <Header></Header>
 
-      <SearchBar />
+      <SearchBar/>
 
       <View style={styles.containerCategory}>
-        <CategoryButton title="Todos" selected={true} />
-        <CategoryButton title="Ação" selected={false} />
-        <CategoryButton title="Animação" selected={false} />
+        <CategoryButton title="Todos" selected={true}/>
+        <CategoryButton title="Ação" selected={false}/>
       </View>
 
       <View style={styles.sectionMovie}>
@@ -29,6 +29,13 @@ export default function App() {
         </View>
       </View>
 
+      <View style={styles.sectionMovies}>
+        <MovieCard image={require('./assets/movies/vingadores-ultimato.jpg')}
+        title= "Vingadores: Ultimato"
+        category='Ação'
+        rating={4.9}></MovieCard>
+      </View>
+      
     </View>
   );
 }
@@ -85,5 +92,9 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "700",
     color:"#94a4b8",
+  },
+
+  sectionMovies:{
+    marginHorizontal: 20
   },
 });
